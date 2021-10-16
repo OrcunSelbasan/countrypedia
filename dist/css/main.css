@@ -1,0 +1,30 @@
+body, select {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+}
+
+body {
+  background-color: #77A1FC;
+  font-weight: bold;
+  font-size: 3em;
+  color: #fff;
+}
+
+main {
+  width: 100%;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=main.css.map */

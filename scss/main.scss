@@ -1,0 +1,20 @@
+body, select{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+body{
+    background-color: #77A1FC;
+    font-weight: bold;
+    font-size: 3em;
+    color: #fff;
+}
+
+main{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
