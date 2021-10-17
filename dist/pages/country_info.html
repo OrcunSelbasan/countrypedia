@@ -8,10 +8,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/53fe21b190.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>Countrypedia - Country</title>
 </head>
 <body>
-    
+    <div class="card">
+        <div class="card-title">
+            <h4 id="name"></h4>
+            <h5 id="official_name"></h5>
+            <h6 id="capital">No capital<i class="far fa-star"></i></h6>
+        </div>
+        <div class="card-body">
+            <div class="col-1">
+                <p>Currency: &nbsp;<span id="currency"></span></p>
+                <p>Currency Symbol: &nbsp;<span id="currency-symbol"></span></p>
+                <p>Languages: &nbsp;<span id="languages"></span></p>
+                <p>Timezones: &nbsp;<span id="timezone"></span></p>
+                <p>Fifa: &nbsp;<span id="fifa">None</span></p>
+            </div>
+            <div class="col-2">
+                <div class="col-2-flag">
+                    <img id="flag" src="" alt="">
+                </div>
+                <p>Continents: &nbsp;<span id="continent"></span></p>
+                <p>Region: &nbsp;<span id="region"></span></p>
+                <p>Subregion: &nbsp;<span id="subregion"></span></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const countryJson = localStorage.getItem('storedData');
+        const data = JSON.parse(countryJson);
+
+        document.querySelector('#name').innerText = data[0].name.common;
+        document.querySelector('#official_name').innerText = data[0].name.official;
+        document.querySelector('#capital').innerText = data[0].capital[0];
+
+        let currencyKeys = Object.keys(data[0].currencies)
+        let languageValues = Object.values(data[0].languages)
+        document.querySelector('#currency').innerText = data[0].currencies[currencyKeys].name;
+        document.querySelector('#currency-symbol').innerText = data[0].currencies[currencyKeys].symbol;
+        document.querySelector('#languages').innerText = languageValues;
+        document.querySelector('#timezone').innerText = data[0].timezones[0];
+
+        if (data[0].fifa != undefined) {
+            document.querySelector('#fifa').innerText = data[0].fifa;
+        }
+
+        document.querySelector('#flag').setAttribute("src", data[0].flags.png)
+        document.querySelector('#continent').innerText = data[0].continents;
+        document.querySelector('#region').innerText = data[0].region;
+        document.querySelector('#subregion').innerText = data[0].subregion;
+
+    </script>
 </body>
 </html>
