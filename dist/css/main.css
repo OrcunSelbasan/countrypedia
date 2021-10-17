@@ -86,4 +86,32 @@ span {
           align-items: flex-start;
   font-size: 24px;
 }
+
+#main {
+  margin: 1em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 260px;
+  border-radius: .5em;
+  border: none;
+}
+
+#main a {
+  padding: 1em;
+  width: 100%;
+  text-decoration: none;
+  font-size: large;
+}
+
+#main a:active {
+  color: #000;
+}
+
+#main a:visited {
+  color: #000;
+}
 /*# sourceMappingURL=main.css.map */
