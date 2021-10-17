@@ -1,3 +1,5 @@
+@import "mixins";
+
 body, select{
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -10,13 +12,28 @@ body{
     color: #fff;
 }
 
-form, main{
+main{
     width: 100%;
-    height: 50vh;
+    height: 98vh;
+    margin: auto auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    p{
+        margin-top: 0;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select{
+    padding: 0.75em;
 }
 
 span{
@@ -85,5 +102,55 @@ span{
         &:visited{
             color: #000;
         }
+    }
+}
+
+@include mQ(1344px){
+    h4{
+        font-size: 24px;
+    }
+    h5{
+        font-size: 22px;
+        text-align: center;
+    }
+    h6{
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+}
+
+@include mQ(1270px){
+    .card-body{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .col-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &::after{
+            width: 50px;
+            height: 1px;
+            margin-bottom: 20px;
+            background-color: #000;
+            content: "";
+            clear: both;
+        }
+    }
+}
+
+@include mQ(483px){
+    img{
+        width: 240px;
+    }
+
+    .card-title{
+        margin-top: 3em;
     }
 }

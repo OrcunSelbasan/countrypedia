@@ -12,38 +12,40 @@
     <title>Countrypedia - Country</title>
 </head>
 <body>
-    <div class="card">
-        <div class="card-title">
-            <h4 id="name"></h4>
-            <h5 id="official_name"></h5>
-            <h6 id="capital">No capital<i class="far fa-star"></i></h6>
-        </div>
-        <div class="card-body">
-            <div class="col-1">
-                <p>Currency: &nbsp;<span id="currency"></span></p>
-                <p>Currency Symbol: &nbsp;<span id="currency-symbol"></span></p>
-                <p>Languages: &nbsp;<span id="languages"></span></p>
-                <p>Timezones: &nbsp;<span id="timezone"></span></p>
-                <p>Fifa: &nbsp;<span id="fifa">None</span></p>
+    <main class="result">
+        <div class="card">
+            <div class="card-title">
+                <h4 id="name"></h4>
+                <h5 id="official_name"></h5>
+                <h6 id="capital">No capital <i class="far fa-star"></i></h6>
             </div>
-            <div class="col-2">
-                <div class="col-2-flag">
-                    <img id="flag" src="" alt="">
+            <div class="card-body">
+                <div class="col-1">
+                    <p>Currency: &nbsp;<span id="currency"></span></p>
+                    <p>Currency Symbol: &nbsp;<span id="currency-symbol"></span></p>
+                    <p>Languages: &nbsp;<span id="languages"></span></p>
+                    <p>Timezones: &nbsp;<span id="timezone"></span></p>
+                    <p>Fifa: &nbsp;<span id="fifa">None</span></p>
                 </div>
-                <p>Continents: &nbsp;<span id="continent"></span></p>
-                <p>Region: &nbsp;<span id="region"></span></p>
-                <p>Subregion: &nbsp;<span id="subregion"></span></p>
+                <div class="col-2">
+                    <div class="col-2-flag">
+                        <img id="flag" src="" alt="">
+                    </div>
+                    <p>Continents: &nbsp;<span id="continent"></span></p>
+                    <p>Region: &nbsp;<span id="region"></span></p>
+                    <p>Subregion: &nbsp;<span id="subregion"></span></p>
+                </div>
             </div>
         </div>
-    </div>
-    <button id="main"><a href="../index.html">Go to Main Page</a></button>
+        <button id="main"><a href="../index.html">Go to Main Page</a></button>
+    </main>
     <script>
         const countryJson = localStorage.getItem('storedData');
         const data = JSON.parse(countryJson);
 
         document.querySelector('#name').innerText = data[0].name.common;
         document.querySelector('#official_name').innerText = data[0].name.official;
-        document.querySelector('#capital').innerText = data[0].capital[0];
+        document.querySelector('#capital').innerHTML = data[0].capital[0] + `<i class="far fa-star"></i>`;
 
         let currencyKeys = Object.keys(data[0].currencies)
         let languageValues = Object.values(data[0].languages)
